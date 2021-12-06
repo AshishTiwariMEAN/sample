@@ -1,0 +1,87 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: API Integration
+host: localhost:3000  # Dev Live  
+basePath: /
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  # Authenticate
+  /api/getCourseList:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: search_ctrl
+    post:
+      tags: ['Course Module']
+      description: Course
+      summary:  Course
+      # used as the method name of the controller
+      operationId: getCourseList
+      parameters:
+        - name: body
+          in: body
+          description:  getCourseList
+          schema:
+           $ref: '#/definitions/getCourseList'
+          required: true        
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/appResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  getCourseList:
+    type: object
+    properties:
+      gpa:
+        type: string
+      grescore:
+        type: string
+      country:
+        type: string
+      courseName:
+        type: string      
+  appResponse:
+    required:
+      - code
+    properties:
+      code:
+        type: number
+      message:
+        type: string
+  appResponseCustom:
+    type: object
+    properties:
+      orgActive:
+        type: boolean
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  restrictObj:
+    type: object
+    properties:
+      userId:
+        type: string
+
+    
