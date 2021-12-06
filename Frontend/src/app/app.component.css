@@ -1,0 +1,128 @@
+/* @import "https://luxcreativesolutions.com/assets/external/styles.css";
+@import "https://luxcreativesolutions.com/assets/external/assets/css/custom_css.css"; */
+.bgSection{
+    height: 100vh;
+   
+ }
+ .main-head{ height: 150px; background: #FFF;}
+.center{height: 100%; position: relative;}
+.DivMiddle{  margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.width100{ width: 100%;}
+.main {
+    padding: 0px 10px;
+}
+.btn-Login{ height: 40px;
+    border-radius: 6px;
+    background-color: rgb(25, 34, 49);
+    border: none;
+    color: lemonchiffon;
+    padding: 0 39px;
+    margin: 15px 0 2px -2px;}
+
+    .astric{
+        color: red;
+    }
+ 
+.decoNone{ text-decoration: none; color: #fff; }
+.m-t-20{ margin-top: 20px;}
+.text-lable{  color: #fff;}
+.text-red{ color: #c4626b; text-decoration: none;}
+
+.searchGpa {
+    margin :0 0 10px 70px;
+
+}
+
+.searchGre {
+    margin :0 0 10px 30px;
+
+}
+
+.searchCountry {
+    margin :0 0 10px 50px;
+
+}
+
+.searchName{
+    margin :0 0 10px 30px;
+}
+
+.form_error {
+    padding: 0px 0 0 117px;
+    margin: 0px 4px 6px 0px;
+    color: red;
+    font-size: 13px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and ( max-width: 767px){
+    .loptopIMg { width: auto;  max-width: 259px; }
+    .main.center{  background: #192231; }
+    .logincircle { background: none; }
+    .loptopIMg {  margin-left: 0;}
+    .bgSection{ height: 490px; background:#192231; }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+    .mobile-modal .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-shadow.ui-dialog-draggable.ui-dialog-resizable{     width: 100%;
+     min-width: 320px !important; }
+     /* .main.center {
+       background: #192231 !important;
+       height: 100vh !important;
+   }  */
+   .DivMiddle {
+     margin: 0  !important;
+     position: unset  !important;
+     top: unset  !important;
+     left: unset  !important;
+     -webkit-transform: unset  !important;
+     transform: unset  !important;
+   }
+   .bgSection {
+     height: 100% !important;
+     background: #192231 !important;
+   }
+      .bgSection .sidenav.center.logincircle{ display: none !important;}
+      .center[_ngcontent-c3] {
+        height: unset !important;
+        position: relative;
+    }
+.main{
+    padding: 20px 10px;
+}
+     }

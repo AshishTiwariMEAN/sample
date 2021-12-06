@@ -1,0 +1,76 @@
+<div class="bgSection">
+  <div class="main center">
+    <div class="DivMiddle width100">
+      <div class="offset-md-2 col-md-7 col-sm-12">
+        
+        <div class="login-forms">
+
+          <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+            <div class="form-group textForm">
+              <label for="gpa">GPA  <span class="astric"> * </span></label>
+              <input type="text" formControlName="gpa" class="form-control searchGpa" />
+              <div *ngIf="searchForm.controls['gpa'].dirty && searchForm.controls['gpa'].invalid">
+                <p class="form_error" *ngIf="searchForm.controls['gpa'].hasError('required')">Please enter gpa.</p>
+               
+              </div>
+            </div>
+            <div class="form-group textForm">
+              <label for="grescore">GRE Score  <span class="astric"> * </span></label>
+              <input type="text" formControlName="grescore" class="form-control searchGre" />
+              <div *ngIf="searchForm.controls['grescore'].dirty && searchForm.controls['grescore'].invalid">
+                <p class="form_error" *ngIf="searchForm.controls['grescore'].hasError('required')">Please enter gre score.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-group textForm">
+              <label for="country">Country <span class="astric"> * </span></label>
+              <input type="text" formControlName="country" class="form-control searchCountry" />
+              <div *ngIf="searchForm.controls['country'].dirty && searchForm.controls['country'].invalid">
+                <p class="form_error" *ngIf="searchForm.controls['country'].hasError('required')">Please enter country.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-group textForm">
+              <label for="coursename">Course Name</label>
+              <input type="text" formControlName="coursename" class="form-control searchName" />
+              
+            </div>
+            <div class="form-group text-right">
+              <button  class="btn btn-primary btn-Login">Search</button>
+            </div>
+          </form>
+
+          <h2>Search List</h2>
+  
+    <table border="1" 
+           width="500">
+        <tr>
+            <th>Name</th>
+            <th>GPA</th>
+            <th>GRE Score</th>
+            <th>Country</th>
+            
+        </tr>
+  
+        <tr *ngFor="let datas of data; index as i;" >
+            <td width="50%">{{datas.name}}</td>
+            <td width="20%">{{datas.minimum_gpa}}</td>
+            <td width="30%">{{datas.minimum_gre_score}}</td>
+            <td width="30%">{{datas.country}}</td>
+           
+            
+        </tr>
+    </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<router-outlet></router-outlet>
